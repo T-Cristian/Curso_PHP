@@ -675,12 +675,7 @@ echo myClass::$myStaticProperty;
                 }
         }
         // ERROR.
-        class miclass2 extends miclass {
 
-                function myFunction() {
-                        echo "niño";
-                }
-        }
 ?>
 
 </body>
