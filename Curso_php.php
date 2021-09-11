@@ -638,6 +638,50 @@ $d2->display(); //2
         $p = new Personn();
 
 ?>
+
+<?php
+        // Destructor de Clases PHP
+        Class persons {
+        Public function __destruct() {
+                echo "Object destroyed";
+        }
+}
+?>
+
+<?php
+        // Herencias de Clases PHP
+        Class Animal {
+                public $name;
+                public function hi(){
+                        echo "Hola es un animal";
+                }
+        }
+        Class Dogs extends Animal {
+
+        }
+        $d = new Dog();
+?>
+
+<?php
+        // Palabra clave estatica
+        class myClass {
+                static $myStaticProperty = 42;
+        }
+echo myClass::$myStaticProperty;
+        // Palabra clave final
+        class miclass {
+                final function myFunction() {
+                        echo "Padre";
+                }
+        }
+        // ERROR.
+        class miclass2 extends miclass {
+
+                function myFunction() {
+                        echo "niño";
+                }
+        }
+?>
+
 </body>
 </html>
-fopen , fwrite and fclose
