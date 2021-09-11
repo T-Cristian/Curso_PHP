@@ -559,7 +559,85 @@ if(isset($_COOKIE['usuario'])) {
         Wendy
         */
 ?>
+<?php
+        // Agregar un archivo
+        $myFile = "test.txt";
+        $fh = fopen($myFile, 'a');
+        fwrite($fh, "Un documento de texto");
+        fclose($fh);
+?>
+<?php
+        // Creacion de un ejemplo de un formulario que agrega datos completos a un archivo.
+if(isset($_POST['text'])) {
+  $name = $_POST['text'];
+  $handle = fopen('names.txt', 'a');
+  fwrite($handle, $name."\n");
+  fclose($handle); 
+}
+?>
+<form method="post">
+  Name: <input type="text" name="text" /> 
+  <input type="submit" name="submit" />
+</form>
+<?php
+        // Leer un archivo
+        $read= file("names.txt");
+        foreach ($read as $line){
+                echo $line. ", ";
+        }
+        // En este codigo no tenemos que imprimir la coma final
+        $read = file("names.txt");
+        $count = count($read);
+        $i = 1;
+        foreach ($read as $line) {
+                echo $line;
+                if($i < $count) {
+                        echo ", ";
+                }
+                $i++;
+        }
+?>
+
+<?php
+        // Clases de PHP
+        class Person {
+                public $age; //property
+                public function speak() { //method
+                  echo "Hi!";
+                }
+        }
+        // Objetos en PHP
+        $bob = new Person();
+        echo $bob->age;
+?>
+
+<?php
+        //this
+        class Dog{
+                public $legs=4;
+                public function display() {
+                        echo $this->legs;
+                }
+        }
+
+$d1 = new Dog();
+$d1->display(); //4
+
+$d2 = new Dog();
+$d2->legs = 2;
+$d2->display(); //2
+?>
+
+<?php
+        // Constructor de clases PHP
+        class Personn {
+                public function __construct(){
+                        echo "Object created";
+                }
+        }
+        $p = new Personn();
+
+?>
 </body>
 </html>
-</body>
-</html>
+fopen , fwrite and fclose
