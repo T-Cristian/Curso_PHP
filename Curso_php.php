@@ -680,3 +680,4 @@ echo myClass::$myStaticProperty;
 
 </body>
 </html>
+
