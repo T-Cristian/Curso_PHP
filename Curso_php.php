@@ -513,6 +513,53 @@ echo "Hi ".$_GET['name'].". ";
 echo "You are ".$_GET['age']." years old.";
 ?>
 
+<?php
+        // SESIONES
+        session_start();
+        $_SESSION['color'] = "CRISTIAN";
+        $_SESSION['name'] = "TORO";
+?>
+<?php
+// vARIABLES DE SESION
+session_start();
+?>
+<!DOCTYPE html>
+<html>
+<body>
+<?php
+echo "Your name is " . $_SESSION['name'];
+// Salida "Su nombre es Cristian Toro
+?>
 
+<?php
+$value = "Cristian";
+setcookie("usuario", $value, time() + (86400 * 30), '/'); 
+
+if(isset($_COOKIE['usuario'])) {
+  echo "Value is: ". $_COOKIE['user'];
+}
+//La salida "El valor: Cristian"
+?>
+
+<?php
+        // Manipular archivos
+        $myfile = fopen("file.txt", "w");
+        // Escribir un archivo
+        $myfile = fopen("names.txt", "w");
+
+        $txt = "Cristian\n";
+        fwrite($myfile, $txt);
+        $txt = "Wendy\n";
+        fwrite($myfile, $txt);
+        
+        fclose($myfile);
+        
+        /* File contains:
+        Cristian
+        Wendy
+        */
+?>
+</body>
+</html>
 </body>
 </html>
